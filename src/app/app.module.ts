@@ -8,25 +8,18 @@ import { StoreModule } from '@ngrx/store';
 import { BundleSizeStoreModule } from '../stores';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
-import { ChartComponent } from './chart/chart.component';
-import { PackageNameValidatorDirective } from '../directives';
+
+import { PackageSearchPanelModule } from '../components';
 
 @NgModule({
-  declarations: [AppComponent, ChartComponent, PackageNameValidatorDirective],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({maxAge: 10}),
-    BundleSizeStoreModule,
-    MatInputModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    MatIconModule,
-    FormsModule,
-    NgxChartsModule
+    PackageSearchPanelModule
   ],
   providers: [],
   bootstrap: [AppComponent]

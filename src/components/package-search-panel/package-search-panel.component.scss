@@ -1,0 +1,39 @@
+.search-form {
+  display: flex;
+
+  .package-field {
+    flex: 1;
+
+    mat-icon {
+      cursor: pointer;
+    }
+  }
+}
+
+.spinner {
+  width: 100%;
+}
+
+.info-panel {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: .5rem;;
+
+  mat-icon {
+    margin-right: .5rem;
+  }
+}
+
+.error {
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+  background-color: #f8d7da;
+}
+
+.warning {
+  color: #856404;
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+}

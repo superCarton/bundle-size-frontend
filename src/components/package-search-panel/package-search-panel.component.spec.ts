@@ -1,14 +1,14 @@
 import { TestBed, async } from '@angular/core/testing';
-import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule, MatButtonModule, MatFormFieldModule, MatIconModule } from '@angular/material';
 import { Component, Directive } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { BehaviorSubject } from 'rxjs';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { initialState } from '../stores';
+import { initialState } from '../../stores';
+import { PackageSearchPanelComponent } from './package-search-panel.component';
 
-describe('AppComponent', () => {
+describe('PackageSearchPanelComponent', () => {
 
   @Component({
     selector: 'chart',
@@ -28,7 +28,7 @@ describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent,
+        PackageSearchPanelComponent,
         MockChartComponent,
         MockValidatorDirective
       ],
@@ -45,7 +45,7 @@ describe('AppComponent', () => {
   }));
 
   it('should not show the spinner by default', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+    const fixture = TestBed.createComponent(PackageSearchPanelComponent);
     const component = fixture.componentInstance;
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
@@ -53,7 +53,7 @@ describe('AppComponent', () => {
   });
 
   it('should not show the chart by default', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+    const fixture = TestBed.createComponent(PackageSearchPanelComponent);
     const component = fixture.componentInstance;
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
@@ -61,7 +61,7 @@ describe('AppComponent', () => {
   });
 
   it('should dispatch a search to the backend when submitting the form', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+    const fixture = TestBed.createComponent(PackageSearchPanelComponent);
     const component = fixture.componentInstance;
     fixture.detectChanges();
     component.onSubmit();

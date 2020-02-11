@@ -6,13 +6,16 @@ Computes the size of NPM modules when they will be injected in a bundle, minifie
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+Run the following commands in a terminal to run locally the app.
+
+```
+yarn
+yarn start
+```
+
 ## Backend server
 
 Clone and run the backend from [this github repository](https://github.com/superCarton/bundle-size-backend.git)
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
@@ -22,6 +25,6 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Further help
+## Improvements TODO
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- Swagger specifications of the API to define the contract between backend and frontend. This would allow interfaces code and API fetch methods generation.

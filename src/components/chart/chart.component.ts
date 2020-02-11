@@ -53,7 +53,6 @@ export class ChartComponent implements OnChanges {
   public ngOnChanges(changes: SimpleChanges) {
     if (changes && this.bundleSizes) {
       this.data = this.bundleSizes.map(this.formatBundleSizeToChartSerie);
-      console.log(this.data);
     }
   }
 }

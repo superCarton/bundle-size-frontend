@@ -1,39 +1,5 @@
 <div class="container-fluid">
   <h1 class="mb-3">Find the cost of adding a npm package to your bundle</h1>
-  <form (submit)="onSubmit()" #form="ngForm" class="search-form mb-3">
-    <mat-form-field appearance="fill" class="package-field">
-      <mat-label>Package name</mat-label>
-      <input
-        matInput
-        required
-        packageNameValidator
-        name="package"
-        [(ngModel)]="packageToSearch"
-        #searchRef="ngModel"
-        type="text"
-        autocomplete="off"
-        class="search-input"/>
-      <mat-icon matSuffix (click)="onSubmit()">search</mat-icon>
-      <mat-error *ngIf="searchRef.errors && searchRef.errors.required">The package name is mandatory</mat-error>
-      <mat-error *ngIf="searchRef.errors && searchRef.errors.invalidPackageName">The package name seams not to be valid</mat-error>
-    </mat-form-field>
-  </form>
-  <div class="info-panel error" *ngIf="errors$ | async; let errors;">
-    <mat-icon class="error-icon">report_problem</mat-icon>
-    <div *ngFor="let error of errors">{{error.title}}</div>
-  </div>
-  <div class="info-panel warning" *ngIf="warnings$ | async; let warnings;">
-    <mat-icon class="error-icon">warning</mat-icon>
-    <div *ngFor="let warning of warnings">{{warning}}</div>
-  </div>
-  <div *ngIf="!(isPending$ | async); else loading">
-    <ng-container *ngIf="bundleSizes$ | async; let bundleSizes;">
-      <chart *ngIf="bundleSizes.length > 0" [bundleSizes]="bundleSizes"></chart>
-    </ng-container>
-  </div>
+  <package-search-panel></package-search-panel>
 </div>
-
-<ng-template #loading>
-  <img src="../assets/loading.gif" alt="Computing the bundle size" class="spinner">
-</ng-template>
 
